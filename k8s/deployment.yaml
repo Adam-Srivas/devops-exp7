@@ -1,0 +1,19 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: mysite
+spec:
+  replicas: 2
+  selector:
+    matchLabels:
+      app: mysite
+  template:
+    metadata:
+      labels:
+        app: mysite
+    spec:
+      containers:
+      - name: mysite
+        image: adamyasrivastava/mysite:IMAGE_TAG
+        ports:
+        - containerPort: 80
